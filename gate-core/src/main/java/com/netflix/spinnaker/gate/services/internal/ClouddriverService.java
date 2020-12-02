@@ -340,7 +340,7 @@ public interface ClouddriverService {
 
   @GET("/ecs/ecsDescribeClusters")
   List<Map> getAllEcsClustersDescription(
-      @Query("account") String account, @Query("region") String region);
+      @Path(value = "account") String account, @Path(value = "region") String region);
 
   @GET("/ecs/serviceDiscoveryRegistries")
   List<Map> getAllEcsServiceDiscoveryRegistries();
