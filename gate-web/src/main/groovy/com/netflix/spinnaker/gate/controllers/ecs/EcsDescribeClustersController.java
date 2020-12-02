@@ -30,10 +30,9 @@ class EcsDescribeClustersController {
   @ApiOperation(
       value =
           "Retrieve a list of ECS cluster descriptions that can be used for the account and region.")
-  @RequestMapping(value = "/ecs/ecsDescribeClusters", method = RequestMethod.GET)
-  List<Map> allEcsClustersDescription(
-      @RequestParam(value = "account", required = true) String account,
-      @RequestParam(value = "region", required = true) String region) {
+  @RequestMapping(value = "/ecs/ecsDescribeClusters/{account}/{region}", method = RequestMethod.GET)
+  public List<Map> lallEcsClustersDescription(
+      @PathVariable String region, @PathVariable String account) {
     return ecsDescribeClustersService.getAllEcsClustersDescription(account, region);
   }
 }
