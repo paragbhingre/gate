@@ -39,6 +39,6 @@ class EcsClusterController {
   @RequestMapping(value = "/ecs/ecsDescribeClusters", method = RequestMethod.GET)
   List allEcsClustersDescription(@RequestParam(required = true) String account,
                                  @RequestParam(required = true) String region) {
-    ecsClusterService.getAllEcsClustersDescription()
+    ecsClusterService.getAllEcsClustersDescription(account, region)
   }
 }
